@@ -10,7 +10,11 @@
     "test:ci": "ng test --browsers ChromeHeadless",
     "predeploy": "ng build --base-href=/workshop-angular-facebook/",
     "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d dist/workshop-angular-facebook/",
-    "postdeploy": "echo 'Deploy finished successful'"
+    "postdeploy": "echo 'Deploy finished successful'",
+    "e2e": "ng e2e",
+    "e2e:ci": "ng e2e --headless true",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +35,7 @@
     "@angular-devkit/build-angular": "^14.0.0",
     "@angular/cli": "~14.0.0",
     "@angular/compiler-cli": "^14.0.0",
+    "@cypress/schematic": "^2.0.0",
     "@types/jasmine": "~4.0.0",
     "cross-env": "^7.0.3",
     "gh-pages": "^4.0.0",
@@ -40,6 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "cypress": "latest"
   }
 }
