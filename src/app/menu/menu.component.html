@@ -2,6 +2,7 @@
     class="navbar bg-primary mb-3 px-3">
     <h1>
         <a
+            routerLink="/"
             class="text-white">
             Facebook
         </a>
@@ -12,6 +13,9 @@
         <li
             class="nav-item">
             <a
+                routerLink="/"
+                routerLinkActive="bg-danger"
+                [routerLinkActiveOptions]="{exact: true}"
                 class="nav-link text-white">
                 Strona główna
             </a>
@@ -19,6 +23,9 @@
         <li
             class="nav-item">
             <a
+                routerLink="/not-found"
+                routerLinkActive="bg-danger"
+                [routerLinkActiveOptions]="{exact: true}"
                 class="nav-link text-white">
                 Strona 404
             </a>
