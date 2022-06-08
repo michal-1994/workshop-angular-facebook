@@ -1,0 +1,21 @@
+<div class="card my-3" *ngIf="post">
+    <div class="card-header d-flex align-items-start">
+      <img src="{{ post.author.avatarUrl }}" class="avatar" alt="{{ post.author.name }}" />
+      <div class="flex-fill">
+        <a>
+            <h4>{{ post.author.name }}</h4>
+        </a>
+        <a>
+          <small>{{ post.createdTime | date }}</small>
+        </a>
+      </div>
+    </div>
+    <img src="{{ post.images[0] }}" class="card-img-top" alt />
+    <div class="card-body">
+      <p class="card-text">{{ post.body }}</p>
+    </div>
+    <div class="card-footer">
+        Footer
+    </div>
+  </div>
+  
