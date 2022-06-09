@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../../posts/interfaces/post.interface';
 import { PostsService } from '../../../posts/services/posts.service';
+import { Sorter } from '../../../shared/helpers/sorter';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -19,7 +20,9 @@ export class HomePageComponent implements OnInit {
     }
     
     private async setupPosts() {
-        this.posts = await this.postsService.getPosts();
+        const posts = await this.postsService.getPosts();
+        const mapTo = (post: Post) => new Date(post.createdTime).getTime();
+        this.posts = Sorter.sortBy(posts, mapTo);   
         this.isPostLoaded = true;
     }
         

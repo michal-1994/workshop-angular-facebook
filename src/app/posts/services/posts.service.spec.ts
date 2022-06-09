@@ -1,8 +1,6 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { environment } from '../../../environments/environment';
-import { Post } from '../interfaces/post.interface';
-import { User } from '../interfaces/user.interface';
 
 import { PostsService } from './posts.service';
 
