@@ -17,14 +17,18 @@ export class PostsService {
         return this.makeRequest<Post[]>(environment.postsUrl);
     }
 
+    getPostById(postId: string) {
+        return this.makeRequest<Post>(`${environment.postsUrl}/${postId}`);
+    }
+
     private makeRequest<T>(url: string): Promise<T> {
         return lastValueFrom<T>(this.http.get<T>(url)
             .pipe(
-                delay(2000)
+                delay(500)
             )
         );
     }
-    
+
     private fakeRequest<T>(url: string): Promise<T> {
         return new Promise((resolve) => {
             setTimeout(() => {

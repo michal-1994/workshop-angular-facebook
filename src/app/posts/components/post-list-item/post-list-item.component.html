@@ -5,7 +5,7 @@
         <a>
             <h4>{{ post.author.name }}</h4>
         </a>
-        <a>
+        <a [routerLink]="getPostProfileUrl()">
           <small>{{ post.createdTime | myDate }}</small>
         </a>
       </div>
