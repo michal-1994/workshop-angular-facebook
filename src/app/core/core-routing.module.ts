@@ -13,6 +13,10 @@ const routes: Routes = [
         loadChildren: () => import('../posts/posts-routing.module').then((m) => m.PostsRoutingModule)
     },
     {
+        path: 'user',
+        loadChildren: () => import('../user/user-routing.module').then((m) => m.UserRoutingModule)
+    },
+    {
         path: '**',
         component: NotFoundPageComponent
     }
