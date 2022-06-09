@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../interfaces/post.interface';
 
 @Component({
@@ -7,33 +7,7 @@ import { Post } from '../../interfaces/post.interface';
     styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-    posts: Post[] = [{
-        "id": "d99d6201-c26b-57d1-bf74-8b548ef73301",
-        "createdTime": "Sun May 01 2022 21:07:33 GMT+0200 (Central European Summer Time)",
-        "author": {
-            "id": "91a885f5-cf1b-529d-9859-7e01fda82dc4",
-            "name": "Wilburn Dicki",
-            "avatarUrl": "//www.gravatar.com/avatar/7a7a31c79d60484324accc9cd9ab654b"
-        },
-        "body": "Temgam po za ho nukvohik guebo li imizavduv nif niso hunweame tatdaok zu.",
-        "images": [
-            "https://picsum.photos/id/305/300/150/",
-            "https://picsum.photos/id/290/300/150/"
-        ]
-    },
-    {
-        "id": "10e3a5c0-7ed1-5648-ab94-a8183805d931",
-        "createdTime": "Mon Sep 20 2021 06:17:16 GMT+0200 (Central European Summer Time)",
-        "author": {
-            "id": "30203de7-cc98-584f-8ff1-986ceb650d07",
-            "name": "Brice Robel",
-            "avatarUrl": "//www.gravatar.com/avatar/7a7a31c79d60484324accc9cd9ab654b"
-        },
-        "body": "Huvgijon cev soefoda jego docuopu zik huofa jaz celkuc mu rionaan gijun uciw hoc pasuj fom giowedig.",
-        "images": [
-            "https://picsum.photos/id/212/300/150/"
-        ]
-    }];
+    @Input() posts: Post[] = [];
 
     constructor() { }
 
