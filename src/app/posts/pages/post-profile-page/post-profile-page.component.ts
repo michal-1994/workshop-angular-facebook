@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../interfaces/post.interface';
 import { PostsService } from '../../services/posts.service';
 
@@ -13,16 +13,24 @@ export class PostProfilePageComponent implements OnInit {
 
     constructor(
         private activatedRoute: ActivatedRoute,
-        private postService: PostsService
+        private postService: PostsService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
         this.setupPost();
     }
-    
+
     private async setupPost() {
         const postId = this.activatedRoute.snapshot.params['id'];
-        this.post = await this.postService.getPostById(postId);
+    
+        try {
+            const post = await this.postService.getPostById(postId);
+            this.post = post;
+        } catch {
+            this.router.navigate(['/not-found']);
+        }
+
     }
 
 }
