@@ -17,14 +17,14 @@ describe('MyDatePipe', () => {
         });
     });
     
-    it ('shoould return empty strin for non-Date values', () => {
-        [[], {}, () => 1].forEach(x => {
+    it ('should return empty string for non-Date values', () => {
+        [[], {}].forEach(x => {
             expect(pipe.transform(x)).toEqual(''); 
         });
     });
     
     it ('should return proper date for date string', () => {
-        const input = new Date('2022-06-09 10:20:30');
+        const input = new Date('2022-06-09, 10:20:30');
         expect(pipe.transform(input)).toEqual('9 czerwca 2022, 10:20'); 
     });
 });
