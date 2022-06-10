@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { UserSignUpPageComponent } from './user-sign-up-page.component';
 
@@ -8,7 +9,10 @@ describe('UserSignUpPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserSignUpPageComponent ]
+      declarations: [ UserSignUpPageComponent ],
+      imports: [
+          ReactiveFormsModule
+      ]
     })
     .compileComponents();
 
