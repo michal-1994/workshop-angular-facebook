@@ -1,1 +1,104 @@
-<p>user-sign-up-page works!</p>
+<div
+    *ngIf="isRegistrationFinish">
+    <p
+        class="alert alert-success">
+        Rejestracja
+        udana
+        <a
+            routerLink="/user/login">Zaloguj
+            sie</a>
+    </p>
+</div>
+
+<div
+    *ngIf="!isRegistrationFinish">
+    <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()">
+        <div
+            class="form-group my-3">
+            <label>E-mail
+                <sup
+                    class="text-danger">*</sup></label>
+            <input
+                required
+                type="email"
+                class="form-control field-email"
+                name="email"
+                formControlName="email" />
+            <small
+                class="text-danger"></small>
+        </div>
+
+        <div
+            class="form-group my-3">
+            <label>Hasło
+                <sup
+                    class="text-danger">*</sup></label>
+            <input
+                required
+                type="password"
+                class="form-control field-password"
+                name="password"
+                formControlName="password" />
+            <small
+                class="text-danger"></small>
+        </div>
+
+        <div
+            class="form-group my-3">
+            <label>Potwierdzenie
+                hasła
+                <sup
+                    class="text-danger">*</sup></label>
+            <input
+                required
+                type="password"
+                class="form-control field-confirmation-password"
+                name="password-confirmation"
+                formControlName="passwordConfirmation" />
+            <small
+                class="text-danger"></small>
+        </div>
+
+        <div
+            formGroupName="person">
+            <div
+                class="form-group my-3">
+                <label>Imię
+                    <sup
+                        class="text-danger">*</sup></label>
+                <input
+                    required
+                    type="name"
+                    class="form-control field-person-name"
+                    name="name"
+                    formControlName="name" />
+                <small
+                    class="text-danger"></small>
+            </div>
+
+            <div
+                class="form-group my-3">
+                <label>Nazwisko
+                    <sup
+                        class="text-danger">*</sup></label>
+                <input
+                    required
+                    type="surname"
+                    class="form-control field-person-surname"
+                    name="surname"
+                    formControlName="surname" />
+                <small
+                    class="text-danger"></small>
+            </div>
+        </div>
+
+        <button
+            type="submit"
+            class="btn btn-primary submit-form">
+            Zarejestruj
+            się
+        </button>
+    </form>
+</div>
