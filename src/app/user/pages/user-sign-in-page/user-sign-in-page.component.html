@@ -1,1 +1,78 @@
-<p>user-sign-in-page works!</p>
+<div>
+    <form
+        novalidate
+        #loginForm="ngForm"
+        (ngSubmit)="onSubmit()">
+        <div
+            class="form-group my-3">
+            <label>
+                E-mail
+                <sup
+                    class="text-danger">*</sup>
+            </label>
+            <input
+                required
+                type="email"
+                class="form-control field-email"
+                autocomplete="username"
+                name="email"
+                maxlength="50"
+                minlength="3"
+                [(ngModel)]="credentials.email"
+                #email="ngModel" />
+            <small
+                class="text-danger"
+                *ngIf="email.touched">
+                <span
+                    *ngIf="email.errors?.['required']">Pole
+                    <em>email</em>
+                    jest
+                    wymagane</span>
+                <span
+                    *ngIf="email.errors?.['max-length']">Pole
+                    <em>email</em>
+                    jest
+                    za
+                    długie</span>
+                <span
+                    *ngIf="email.errors?.['min-length']">Pole
+                    <em>email</em>
+                    za
+                    krótkie
+                </span>
+            </small>
+        </div>
+        <div
+            class="form-group my-3">
+            <label>
+                Hasło
+                <sup
+                    class="text-danger">*</sup>
+            </label>
+            <input
+                required
+                type="password"
+                class="form-control field-password"
+                name="password"
+                autocomplete="current-password"
+                [(ngModel)]="credentials.password"
+                #password="ngModel" />
+            <small
+                class="text-danger"
+                *ngIf="password.touched">
+                <span
+                    *ngIf="password.errors?.['required']">Pole
+                    <em>password</em>
+                    jest
+                    puste</span>
+            </small>
+        </div>
+        <button
+            [disabled]="loginForm.invalid"
+            type="submit"
+            class="btn btn-primary submit-form">
+            Zaloguj
+            się
+        </button>
+    </form>
+</div>
