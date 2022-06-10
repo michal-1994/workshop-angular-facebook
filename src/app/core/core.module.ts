@@ -11,21 +11,21 @@ import { UserModule } from '../user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    HomePageComponent,
-    NotFoundPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    CoreRoutingModule,
-    PostsModule,
-    FormsModule,
-    UserModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MenuComponent,
+        HomePageComponent,
+        NotFoundPageComponent
+    ],
+    imports: [
+        BrowserModule,
+        CoreRoutingModule,
+        PostsModule,
+        FormsModule,
+        UserModule,
+        ReactiveFormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class CoreModule { }

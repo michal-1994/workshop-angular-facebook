@@ -9,6 +9,7 @@ import { Post } from '../../interfaces/post.interface';
 })
 export class PostListComponent implements OnInit {
     @Input() posts: Post[] = [];
+    p = 1;
 
     constructor() { }
 

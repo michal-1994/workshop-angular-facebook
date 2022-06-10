@@ -1,4 +1,8 @@
 <app-post-list-item
     [post]="post"
-    *ngFor="let post of posts"
+    *ngFor="let post of posts | paginate: { itemsPerPage: 2, currentPage: p }" 
 ></app-post-list-item>
+
+<ng-container *ngIf="posts.length > 0">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</ng-container>
