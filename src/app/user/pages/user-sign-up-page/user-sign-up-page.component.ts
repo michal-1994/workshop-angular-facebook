@@ -41,7 +41,5 @@ export class UserSignUpPageComponent implements OnInit {
         if (status) {
             this.isRegistrationFinish = true;
         }
-        // this.userService.signIn(this.credentials as Credentials);
-        // this.router.navigateByUrl('/user/profile');
     }
 }
