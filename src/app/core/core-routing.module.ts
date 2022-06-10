@@ -6,7 +6,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 const routes: Routes = [
     {
         path: '',
-        component: HomePageComponent  
+        component: HomePageComponent,
+        title: 'Home'
     },
     {
         path: 'posts',
@@ -18,7 +19,8 @@ const routes: Routes = [
     },
     {
         path: '**',
-        component: NotFoundPageComponent
+        component: NotFoundPageComponent,
+        title: 'NotFound'
     }
 ];
 

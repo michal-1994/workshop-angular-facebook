@@ -10,20 +10,24 @@ const routes: Routes = [
     {
         path: 'profile',
         component: UserProfilePageComponent,
-        canActivate: [OnlyForAuthUserGuard]
+        canActivate: [OnlyForAuthUserGuard],
+        title: 'Profile'
     },
     {
         path: 'register',
-        component: UserSignUpPageComponent
+        component: UserSignUpPageComponent,
+        title: 'Register'
     },
     {
         path: 'login',
-        component: UserSignInPageComponent
+        component: UserSignInPageComponent,
+        title: 'Login'
     },
     {
         path: 'logout',
         component: UserSignOutPageComponent,
-        canActivate: [OnlyForAuthUserGuard]
+        canActivate: [OnlyForAuthUserGuard],
+        title: 'Logout'
     }
 ];
 
