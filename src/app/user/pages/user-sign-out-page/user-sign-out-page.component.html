@@ -1,1 +1,13 @@
-<p>user-sign-out-page works!</p>
+<ng-container
+    *ngIf="isLogoutFinish">
+    <p
+        class="alert alert-success">Wylogowano pomyslnie
+    </p>
+</ng-container>
+
+<ng-container
+    *ngIf="!isLogoutFinish">
+    <p
+        class="alert alert-danger">Nie udalo sie wylogowac uzytkownika
+    </p>
+</ng-container>

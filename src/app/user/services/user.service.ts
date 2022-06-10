@@ -16,7 +16,13 @@ export class UserService {
         return true;
     }
     
+    signOut():boolean {
+        this.isLogged = false;
+        return true;
+    }
+    
     addUser(user: UserData) {
+        console.log('User email: ', user.email)
         return true;
     }
 }
