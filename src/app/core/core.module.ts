@@ -9,13 +9,15 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { PostsModule } from '../posts/posts.module';
 import { UserModule } from '../user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { KeystrokesPanelComponent } from './components/keystrokes-panel/keystrokes-panel.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MenuComponent,
         HomePageComponent,
-        NotFoundPageComponent
+        NotFoundPageComponent,
+        KeystrokesPanelComponent
     ],
     imports: [
         BrowserModule,

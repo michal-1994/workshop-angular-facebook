@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from '../../interfaces/post.interface';
 
 @Component({
@@ -10,7 +11,13 @@ import { Post } from '../../interfaces/post.interface';
 export class PostListItemComponent implements OnInit {
     @Input() post: Post | null = null;
     
-    constructor() { }
+    @HostListener('click') onClick() {
+        this.router.navigateByUrl(this.getPostProfileUrl())
+    }
+    
+    constructor(
+        private router: Router
+    ) { }
 
     ngOnInit(): void {
     }
